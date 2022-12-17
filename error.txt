@@ -1,0 +1,12 @@
+1.
+Error Msg " 
+Liquid Exception: Liquid syntax error (line 41): Variable '{{A..C}' was not properly terminated with regexp: /\}\}/ in Danhocats Generator/node_modules/brace-expansion/README.md
+
+Error Link
+https://github.com/ika9810/Danhocats/actions/runs/3721410149/jobs/6311547360
+
+Solution
+'{{A..C}' -> '{ {A..C}'
+
+Reference
+https://pi-314.tistory.com/196?category=412598
