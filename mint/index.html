@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" content="Danho Cats Minting Site(By Team DanhoCats)"/>
+    <meta name="keywords" content="Danho Cats Minting Site(By Team DanhoCats)"/>
+    <meta name="author" content="Danho Cats Minting Site(By Team DanhoCats)"/>
+    <meta property="og:title" content="Danho Cats Minting Site(By Team DanhoCats)"/>
+    <meta property="og:url" content="https://www.danhocats.com"/>
+    <meta property="og:site_name" content="Danho Cats Minting Site(By Team DanhoCats)"/>
+    <meta property="og:image" content="./images/img-2.png"/>
+    <meta property="og:description" content="Mint Danho Cats Minting Site(By Team DanhoCats)"/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Danho Cats Minting Site"/>
+    <meta name="twitter:url" content=""/>
+    <meta name="twitter:image" content="g"/>
+    <meta name="twitter:description" content="Mint a Danho Cats Minting Site(By Team DanhoCats)"/>
+    <title>Danho Cats Minting Site</title>
+
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" id="bootstrap-style" />
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="css/style.min.css" type="text/css" />
+    
+    <!-- Material Icon Css -->
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css" rel="stylesheet">
+
+</head>
+
+<body data-bs-target="#navbar-navlist" data-bs-offset="71">
+    <!--data-bs-spy="scroll"-->
+     <!--Navbar Start-->
+     <nav class="navbar navbar-expand-lg fixed-top sticky" id="navbar">
+        <div class="container-fluid custom-container">
+            <a class="navbar-brand logo f-30 text-dark fw-bold" href="index.html">
+                <img src="images/logo-cat.png" class="logo-dark" alt="" height="40">
+            </a>
+            <div>
+                <button class="navbar-toggler me-3" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-label="Toggle navigation">
+                    <i class="mdi mdi-menu"></i>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="sr-only navbar-nav mx-auto navbar-right">
+
+                    <!--end dropdown-->
+
+                    <li class="nav-item">
+                        <a class="nav-link" style="visibility: hidden;">Danho Cats</a>
+                    </li>
+                    <!--end dropdown-->
+                </ul>
+                <!--end navbar-nav-->
+                
+                <a onclick="connect()" class="btn btn-primary" id="myWallet">CONNECT TO WALLET</a>
+
+            </div>
+
+        </div>
+        <!--end container-->
+    </nav>
+    <!-- Navbar End -->
+    <section class="item-detail section bg-light">
+        <!-- start container -->
+        <div class="container">
+            <div class="row mt-5 align-items-center">
+                <div class="col-lg-6">
+                    <div class="back-home-image pe-4">
+                        <img src="images/img-2.png" alt="" class=" image-fill">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="backhome-content mt-4 mt-lg-0">
+                        <h2 class="fw-bold">Danho Cats Public Mint</h2>
+
+                        <hr class="my-4">
+                        <div class="row ">
+                            <div class="col-lg-6">
+                                <h6 class="fw-bold mb-1">현재 블록</h6>
+                                <p class="fw-semibold" id = "blockNubmer">#00000000</p>
+                            </div>
+                            <div class="col-lg-6 text-right">
+                                <h6 class="mb-0 fw-bold">민팅 시작 블록</h6>
+                                <p class="fw-semibold" id = "mintStartBlockNumber">#00000000</p>
+                            </div>
+                            <p class="text-muted">보다 정확한 현재 블록 정보는 <a class="text-muted-klay fw-semibold" href="https://scope.klaytn.com/" target="_blank" rel="noopener noreferrer">클레이튼 스코프</a> or <a class="text-muted-klay fw-semibold" href="https://klayswap.com/" target="_blank" rel="noopener noreferrer">클레이스왑</a>을 참고 바랍니다.</p>
+                        
+                        </div>
+                        <hr class="my-4">
+
+                        <div class="tab-box my-4">
+                            <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <!-- cursor: pointer로 적용되어있어 이 것을 강제적으로 default로 변경하였다. -->
+                                    <a class="nav-link active" id="pills-home-tab" type="button" style="cursor: default">MINTING INFO</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content mt-4 ps-3" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                    aria-labelledby="pills-home-tab">
+                                    <div class="row ">
+                                        <div class="col-lg-6">
+                                            <h6 class="fw-bold mb-1">민팅 가격</h6>
+                                            <p class="fw-semibold" id="mintPrice">0 KLAY</p>
+                                        </div>
+                                        <div class="col-lg-6 text-right">
+                                            <h6 class="mb-0 fw-bold">트랜잭션당 최대 수량</h6>
+                                            <p class="fw-semibold" id="mintLimitPerBlock">0개</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="my-4">
+                        <div class="row ">
+                            <div class="col-lg-6">
+                                <h6 class="fw-bold mb-1">민팅 수량</h6>
+                            </div>
+                        </div>
+                        <div class="selected-menu mt-3">
+                            <div class="containers">
+                                <button class="plus-minus-btn" id="decrement" onclick="stepper(this)"> - </button>
+                                <input class = "fw-bold" id="amount" name="quantity" type="number" min="1" max="5" step="1" value="1" oninput="onlyNumber(this)" >
+                                <button class="plus-minus-btn" id="increment" onclick="stepper(this)"> + </button>     
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+                        <div class="row ">
+                            <div class="col-lg-6">
+                                <h6 class="fw-bold mb-1">잔고</h6>
+                                <p class="fw-semibold" id="myKlay">잔액: 연결되지 않음</span></p>
+                            </div>
+                            <div class="col-lg-6 text-right">
+                                <h6 class="mb-0 fw-bold">수량</h6>
+                                <p class="fw-semibold" id="mintCnt">0 / 0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button onclick= "publicMint()" class="btn btn-primary">MINT</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!-- start footer -->
+     <!-- <section class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center">
+                        <p class="my-4 text-muted">©
+                            <script>document.write(new Date().getFullYear())</script> Danho Cats.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- end footer -->
+
+    <!--Bootstrap Js-->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/config.js"></script>
+	<script src="js/mintScript.js"></script>
+    <script>
+		document.addEventListener("DOMContentLoaded", async function (event) {
+			const accounts = await klaytn.enable();
+			if (!accounts) {
+				alert("KaiKas 확장 프로그램을 활성화 해주세요!");
+			}
+			check_status();
+		});
+	</script>
+</body>
+</html>
